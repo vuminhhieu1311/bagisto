@@ -493,7 +493,7 @@ return [
                 'orders'            => 'Orders',
                 'profile'           => 'Profile',
                 'search'            => 'Search',
-                'search-text'       => 'Search products here',
+                'search-text'       => 'Tìm kiếm sản phẩm',
                 'sign-in'           => 'Sign In',
                 'sign-up'           => 'Sign Up',
                 'submit'            => 'Submit',
@@ -618,7 +618,7 @@ return [
 
         'products' => [
             'card' => [
-                'add-to-cart'            => 'Add To Cart',
+                'add-to-cart'            => 'Thêm vào giỏ hàng',
                 'add-to-compare'         => 'Add To Compare',
                 'add-to-compare-success' => 'Item added successfully to compare list.',
                 'add-to-wishlist'        => 'Add To Wishlist',
@@ -629,9 +629,9 @@ return [
             ],
 
             'carousel' => [
-                'next'     => 'Next',
-                'previous' => 'Previous',
-                'view-all' => 'View All',
+                'next'     => 'Tiếp',
+                'previous' => 'Trước',
+                'view-all' => 'Xem tất cả',
             ],
 
             'ratings' => [
@@ -782,7 +782,7 @@ return [
                 'write-a-review'   => 'Write a Review',
             ],
 
-            'add-to-cart'            => 'Add To Cart',
+            'add-to-cart'            => 'Thêm vào giỏ hàng',
             'add-to-compare'         => 'Product added in compare.',
             'add-to-wishlist'        => 'Add To Wishlist',
             'additional-information' => 'Additional Information',

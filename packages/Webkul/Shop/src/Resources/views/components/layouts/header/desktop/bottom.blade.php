@@ -93,9 +93,9 @@
                 >
                 </button>
 
-                @if (core()->getConfigData('catalog.products.settings.image_search'))
+                {{-- @if (core()->getConfigData('catalog.products.settings.image_search'))
                     @include('shop::search.images.index')
-                @endif
+                @endif --}}
             </form>
         </div>
 
@@ -290,7 +290,7 @@
                 <span>
                     <a
                         :href="category.url"
-                        class="inline-block px-5 uppercase"
+                        class="inline-block px-5 pt-1"
                     >
                         @{{ category.name }}
                     </a>
