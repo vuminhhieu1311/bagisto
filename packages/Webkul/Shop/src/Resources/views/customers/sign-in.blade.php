@@ -118,7 +118,7 @@
                             </label>
                         </div>
 
-                        <div class="block">
+                        {{-- <div class="block">
                             <a
                                 href="{{ route('shop.customers.forgot_password.create') }}"
                                 class="cursor-pointer text-base text-black max-sm:text-sm"
@@ -127,7 +127,7 @@
                                     @lang('shop::app.customers.login-form.forgot-pass')
                                 </span>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
 
                     <!-- Captcha -->
