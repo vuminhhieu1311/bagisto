@@ -1,7 +1,4 @@
-<v-product-card
-    {{ $attributes }}
-    :product="product"
->
+<v-product-card {{ $attributes }} :product="product">
 </v-product-card>
 
 @pushOnce('scripts')
@@ -11,9 +8,10 @@
     >
         <!-- Grid Card -->
         <div
-            class="1180:transtion-all group w-full rounded-md 1180:relative 1180:grid 1180:content-start 1180:overflow-hidden 1180:duration-300 1180:hover:shadow-[0_5px_10px_rgba(0,0,0,0.1)]"
+            class="w-full rounded-md relative overflow-hidden group"
             v-if="mode != 'list'"
         >
+            <!-- Product Image -->
             <div class="relative max-h-[300px] max-w-[291px] overflow-hidden max-md:max-h-60 max-md:max-w-full max-md:rounded-lg max-sm:max-h-[200px] max-sm:max-w-full">
                 {!! view_render_event('bagisto.shop.components.products.card.image.before') !!}
 
@@ -23,7 +21,7 @@
                     :aria-label="product.name + ' '"
                 >
                     <x-shop::media.images.lazy
-                        class="after:content-[' '] relative bg-zinc-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)] group-hover:scale-105"
+                        class="after:content-[' '] relative bg-zinc-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)]"
                         ::src="product.base_image.medium_image_url"
                         ::key="product.id"
                         ::index="product.id"
@@ -33,8 +31,43 @@
                     />
                 </a>
 
+                <!-- Plus icon in the corner of the image -->
+                <span class="absolute bottom-5 right-5 text-xl cursor-pointer z-50" @click="addToCart()">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_2031_27)">
+                        <path d="M2.8125 9H15.1875" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 2.8125V15.1875" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_2031_27">
+                        <rect width="18" height="18" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </span>
+
+                <!-- Hover overlay with color options -->
+                <div class="absolute bottom-0 left-0 right-0 p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100" style="background: rgba(217, 216, 207, 0.80);min-height: 56px;">
+                    <div class="flex items-center justify-between mt-2">
+                        <div>
+                            <!-- Product Colors -->
+                            <div
+                                class="flex gap-2 mt-1"
+                                v-if="product.colors && product.colors.length"
+                            >
+                                <span
+                                    v-for="color in product.colors"
+                                    class="h-4 w-4 rounded-full border border-gray-200"
+                                    :style="{ backgroundColor: color }"
+                                >
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 {!! view_render_event('bagisto.shop.components.products.card.image.after') !!}
-                
+
                 <!-- Product Ratings -->
                 {!! view_render_event('bagisto.shop.components.products.card.average_ratings.before') !!}
 
@@ -74,112 +107,19 @@
                     >
                         @lang('shop::app.components.products.card.new')
                     </p>
-
-                    <div class="opacity-0 transition-all duration-300 group-hover:bottom-0 group-hover:opacity-100 max-lg:opacity-100 max-sm:opacity-100">
-
-                        {!! view_render_event('bagisto.shop.components.products.card.wishlist_option.before') !!}
-
-                        @if (core()->getConfigData('customer.settings.wishlist.wishlist_option'))
-                            <span
-                                class="absolute top-2.5 flex h-6 w-6 items-center justify-center rounded-full border border-zinc-200 bg-white text-lg md:hidden ltr:right-1.5 rtl:left-1.5"
-                                role="button"
-                                aria-label="@lang('shop::app.components.products.card.add-to-wishlist')"
-                                tabindex="0"
-                                :class="product.is_wishlist ? 'icon-heart-fill text-red-500' : 'icon-heart'"
-                                @click="addToWishlist()"
-                            >
-                            </span>
-                        @endif
-
-                        {!! view_render_event('bagisto.shop.components.products.card.wishlist_option.after') !!}
-
-                        {!! view_render_event('bagisto.shop.components.products.card.compare_option.before') !!}
-
-                        @if (core()->getConfigData('catalog.products.settings.compare_option'))
-                            <span
-                                class="icon-compare absolute top-10 flex h-6 w-6 items-center justify-center rounded-full border border-zinc-200 bg-white text-lg sm:hidden ltr:right-1.5 rtl:left-1.5"
-                                role="button"
-                                aria-label="@lang('shop::app.components.products.card.add-to-compare')"
-                                tabindex="0"
-                                @click="addToCompare(product.id)"
-                            >
-                            </span>
-                        @endif
-
-                        {!! view_render_event('bagisto.shop.components.products.card.compare_option.after') !!}
-
-                    </div>
                 </div>
             </div>
 
             <!-- Product Information Section -->
-            <div class="-mt-9 grid max-w-[291px] translate-y-9 content-start gap-2.5 bg-white p-2.5 transition-transform duration-300 ease-out group-hover:-translate-y-0 group-hover:rounded-t-lg max-md:relative max-md:mt-0 max-md:translate-y-0 max-md:gap-0 max-md:px-0 max-md:py-1.5 max-sm:min-w-[170px] max-sm:max-w-[192px]">
-
-                {!! view_render_event('bagisto.shop.components.products.card.name.before') !!}
-
-                <p class="break-all text-base font-medium max-md:mb-1.5 max-md:max-w-56 max-md:whitespace-break-spaces max-md:leading-6 max-sm:max-w-[192px] max-sm:text-sm max-sm:leading-4">
+            <div class="grid max-w-[291px] content-start gap-2.5 bg-white p-2.5 max-md:gap-0 max-md:px-0 max-md:py-1.5 max-sm:min-w-[170px] max-sm:max-w-[192px]">
+                <p class="text-base max-md:mb-1.5 max-md:max-w-56 max-md:whitespace-break-spaces max-md:leading-6 max-sm:max-w-[192px] max-sm:text-sm max-sm:leading-4">
                     @{{ product.name }}
                 </p>
 
-                {!! view_render_event('bagisto.shop.components.products.card.name.after') !!}
-
-                <!-- Pricing -->
-                {!! view_render_event('bagisto.shop.components.products.card.price.before') !!}
-
                 <div
-                    class="flex items-center gap-2.5 text-lg font-semibold max-sm:text-sm max-sm:leading-6"
+                    class="flex items-center gap-2.5 text-lg max-sm:text-sm max-sm:leading-6"
                     v-html="product.price_html"
                 >
-                </div>
-
-                {!! view_render_event('bagisto.shop.components.products.card.price.after') !!}
-
-                <!-- Product Actions Section -->
-                <div class="action-items flex items-center justify-between opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 max-md:hidden">
-                    @if (core()->getConfigData('sales.checkout.shopping_cart.cart_page'))
-                        {!! view_render_event('bagisto.shop.components.products.card.add_to_cart.before') !!}
-
-                        <button
-                            class="secondary-button w-full max-w-full p-2.5 text-sm font-medium max-sm:rounded-xl max-sm:p-2"
-                            :disabled="! product.is_saleable || isAddingToCart"
-                            @click="addToCart()"
-                        >
-                            @lang('shop::app.components.products.card.add-to-cart')
-                        </button>
-
-                        {!! view_render_event('bagisto.shop.components.products.card.add_to_cart.after') !!}
-                    @endif
-
-                    {!! view_render_event('bagisto.shop.components.products.card.wishlist_option.before') !!}
-
-                    @if (core()->getConfigData('customer.settings.wishlist.wishlist_option'))
-                        <span
-                            class="cursor-pointer p-2.5 text-2xl max-sm:hidden"
-                            role="button"
-                            aria-label="@lang('shop::app.components.products.card.add-to-wishlist')"
-                            tabindex="0"
-                            :class="product.is_wishlist ? 'icon-heart-fill text-red-600' : 'icon-heart'"
-                            @click="addToWishlist()"
-                        >
-                        </span>
-                    @endif
-
-                    {!! view_render_event('bagisto.shop.components.products.card.wishlist_option.after') !!}
-
-                    {!! view_render_event('bagisto.shop.components.products.card.compare_option.before') !!}
-
-                    @if (core()->getConfigData('catalog.products.settings.compare_option'))
-                        <span
-                            class="icon-compare cursor-pointer p-2.5 text-2xl max-sm:hidden"
-                            role="button"
-                            aria-label="@lang('shop::app.components.products.card.add-to-compare')"
-                            tabindex="0"
-                            @click="addToCompare(product.id)"
-                        >
-                        </span>
-                    @endif
-
-                    {!! view_render_event('bagisto.shop.components.products.card.compare_option.after') !!}
                 </div>
             </div>
         </div>
@@ -189,7 +129,7 @@
             class="relative flex max-w-max grid-cols-2 gap-4 overflow-hidden rounded max-sm:flex-wrap"
             v-else
         >
-            <div class="group relative max-h-[258px] max-w-[250px] overflow-hidden"> 
+            <div class="group relative max-h-[258px] max-w-[250px] overflow-hidden">
 
                 {!! view_render_event('bagisto.shop.components.products.card.image.before') !!}
 
@@ -227,7 +167,7 @@
                         {!! view_render_event('bagisto.shop.components.products.card.wishlist_option.before') !!}
 
                         @if (core()->getConfigData('customer.settings.wishlist.wishlist_option'))
-                            <span 
+                            <span
                                 class="absolute top-5 flex h-[30px] w-[30px] cursor-pointer items-center justify-center rounded-md bg-white text-2xl ltr:right-5 rtl:left-5"
                                 role="button"
                                 aria-label="@lang('shop::app.components.products.card.add-to-wishlist')"
@@ -355,14 +295,17 @@
                                 product_id: this.product.id
                             })
                             .then(response => {
-                                this.product.is_wishlist = ! this.product.is_wishlist;
+                                this.product.is_wishlist = !this.product.is_wishlist;
 
-                                this.$emitter.emit('add-flash', { type: 'success', message: response.data.data.message });
+                                this.$emitter.emit('add-flash', {
+                                    type: 'success',
+                                    message: response.data.data.message
+                                });
                             })
                             .catch(error => {});
-                        } else {
-                            window.location.href = "{{ route('shop.customer.session.index')}}";
-                        }
+                    } else {
+                        window.location.href = "{{ route('shop.customer.session.index') }}";
+                    }
                 },
 
                 addToCompare(productId) {
@@ -370,20 +313,29 @@
                      * This will handle for customers.
                      */
                     if (this.isCustomer) {
-                        this.$axios.post('{{ route("shop.api.compare.store") }}', {
+                        this.$axios.post('{{ route('shop.api.compare.store') }}', {
                                 'product_id': productId
                             })
                             .then(response => {
-                                this.$emitter.emit('add-flash', { type: 'success', message: response.data.data.message });
+                                this.$emitter.emit('add-flash', {
+                                    type: 'success',
+                                    message: response.data.data.message
+                                });
                             })
                             .catch(error => {
                                 if ([400, 422].includes(error.response.status)) {
-                                    this.$emitter.emit('add-flash', { type: 'warning', message: error.response.data.data.message });
+                                    this.$emitter.emit('add-flash', {
+                                        type: 'warning',
+                                        message: error.response.data.data.message
+                                    });
 
                                     return;
                                 }
 
-                                this.$emitter.emit('add-flash', { type: 'error', message: error.response.data.message});
+                                this.$emitter.emit('add-flash', {
+                                    type: 'error',
+                                    message: error.response.data.message
+                                });
                             });
 
                         return;
@@ -395,19 +347,28 @@
                     let items = this.getStorageValue() ?? [];
 
                     if (items.length) {
-                        if (! items.includes(productId)) {
+                        if (!items.includes(productId)) {
                             items.push(productId);
 
                             localStorage.setItem('compare_items', JSON.stringify(items));
 
-                            this.$emitter.emit('add-flash', { type: 'success', message: "@lang('shop::app.components.products.card.add-to-compare-success')" });
+                            this.$emitter.emit('add-flash', {
+                                type: 'success',
+                                message: "@lang('shop::app.components.products.card.add-to-compare-success')"
+                            });
                         } else {
-                            this.$emitter.emit('add-flash', { type: 'warning', message: "@lang('shop::app.components.products.card.already-in-compare')" });
+                            this.$emitter.emit('add-flash', {
+                                type: 'warning',
+                                message: "@lang('shop::app.components.products.card.already-in-compare')"
+                            });
                         }
                     } else {
                         localStorage.setItem('compare_items', JSON.stringify([productId]));
 
-                        this.$emitter.emit('add-flash', { type: 'success', message: "@lang('shop::app.components.products.card.add-to-compare-success')" });
+                        this.$emitter.emit('add-flash', {
+                            type: 'success',
+                            message: "@lang('shop::app.components.products.card.add-to-compare-success')"
+                        });
 
                     }
                 },
@@ -415,7 +376,7 @@
                 getStorageValue(key) {
                     let value = localStorage.getItem('compare_items');
 
-                    if (! value) {
+                    if (!value) {
                         return [];
                     }
 
@@ -425,28 +386,37 @@
                 addToCart() {
                     this.isAddingToCart = true;
 
-                    this.$axios.post('{{ route("shop.api.checkout.cart.store") }}', {
+                    this.$axios.post('{{ route('shop.api.checkout.cart.store') }}', {
                             'quantity': 1,
                             'product_id': this.product.id,
                         })
                         .then(response => {
                             if (response.data.message) {
-                                this.$emitter.emit('update-mini-cart', response.data.data );
+                                this.$emitter.emit('update-mini-cart', response.data.data);
 
-                                this.$emitter.emit('add-flash', { type: 'success', message: response.data.message });
+                                this.$emitter.emit('add-flash', {
+                                    type: 'success',
+                                    message: response.data.message
+                                });
                             } else {
-                                this.$emitter.emit('add-flash', { type: 'warning', message: response.data.data.message });
+                                this.$emitter.emit('add-flash', {
+                                    type: 'warning',
+                                    message: response.data.data.message
+                                });
                             }
 
                             this.isAddingToCart = false;
                         })
                         .catch(error => {
-                            this.$emitter.emit('add-flash', { type: 'error', message: error.response.data.message });
+                            this.$emitter.emit('add-flash', {
+                                type: 'error',
+                                message: error.response.data.message
+                            });
 
                             if (error.response.data.redirect_uri) {
                                 window.location.href = error.response.data.redirect_uri;
                             }
-                            
+
                             this.isAddingToCart = false;
                         });
                 },

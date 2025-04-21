@@ -5,6 +5,7 @@ namespace Webkul\Shop\Http\Controllers\API;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Webkul\Category\Repositories\CategoryRepository;
 use Webkul\Marketing\Jobs\UpdateCreateSearchTerm as UpdateCreateSearchTermJob;
+use Webkul\Product\Helpers\ConfigurableOption;
 use Webkul\Product\Repositories\ProductRepository;
 use Webkul\Shop\Http\Resources\ProductResource;
 
@@ -50,6 +51,23 @@ class ProductController extends APIController
                     'locale'     => app()->getLocale(),
                 ]);
             }
+        }
+
+        $configurableOption = app(ConfigurableOption::class);
+        foreach ($products as $product) {
+            $attributes = $configurableOption->getConfigurationConfig($product);
+            if (empty ($attributes['attributes'])) {
+                continue;
+            }
+            $colorAttribute = collect($attributes['attributes'])->first(function ($item) {
+                return $item['code'] === 'color' && $item['swatch_type'] === 'color';
+            });
+            if (!$colorAttribute) {
+                continue;
+            }
+            $product->colors = array_map(function ($item) {
+                return $item['swatch_value'];
+            }, $colorAttribute['options']);
         }
 
         return ProductResource::collection($products);
