@@ -4026,7 +4026,7 @@ return [
 
                 'rich-snippets' => [
                     'info'  => 'Thiết lập sản phẩm và danh mục.',
-                    'title' => 'Đoạn trích mở rộng',
+                    'title' => 'Rich Snippets',
 
                     'products' => [
                         'enable'          => 'Kích hoạt',
@@ -4045,7 +4045,7 @@ return [
                         'enable'                  => 'Kích hoạt',
                         'show-search-input-field' => 'Hiển thị ô nhập tìm kiếm',
                         'title'                   => 'Danh mục',
-                        'title-info'              => '\\"Danh mục\\" là các nhóm hoặc phân loại giúp tổ chức và nhóm các sản phẩm hoặc mặt hàng tương tự lại với nhau để dễ dàng duyệt và điều hướng.',
+                        'title-info'              => '"Danh mục" là các nhóm hoặc phân loại giúp tổ chức và nhóm các sản phẩm hoặc mặt hàng tương tự lại với nhau để dễ dàng duyệt và điều hướng.',
                     ],
                 ],
 

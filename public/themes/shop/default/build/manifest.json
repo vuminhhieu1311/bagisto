@@ -1,8 +1,16 @@
 {
   "src/Resources/assets/css/app.css": {
-    "file": "assets/app-DylXwZj5.css",
+    "file": "assets/app-DEzU9lTw.css",
     "src": "src/Resources/assets/css/app.css",
     "isEntry": true
+  },
+  "src/Resources/assets/fonts/ABeeZee-Italic.ttf": {
+    "file": "assets/ABeeZee-Italic-qCp2SRsW.ttf",
+    "src": "src/Resources/assets/fonts/ABeeZee-Italic.ttf"
+  },
+  "src/Resources/assets/fonts/ABeeZee-Regular.ttf": {
+    "file": "assets/ABeeZee-Regular-DEtYggwG.ttf",
+    "src": "src/Resources/assets/fonts/ABeeZee-Regular.ttf"
   },
   "src/Resources/assets/fonts/bagisto-shop.woff": {
     "file": "assets/bagisto-shop-BHAKyv0r.woff",
@@ -32,12 +40,36 @@
     "file": "assets/hero-image-DwKg3YHc.webp",
     "src": "src/Resources/assets/images/hero-image.webp"
   },
+  "src/Resources/assets/images/insta1.png": {
+    "file": "assets/insta1-D2pjAK5o.png",
+    "src": "src/Resources/assets/images/insta1.png"
+  },
+  "src/Resources/assets/images/insta2.png": {
+    "file": "assets/insta2-m_qVGWjt.png",
+    "src": "src/Resources/assets/images/insta2.png"
+  },
+  "src/Resources/assets/images/insta3.png": {
+    "file": "assets/insta3-BNMRqE60.png",
+    "src": "src/Resources/assets/images/insta3.png"
+  },
+  "src/Resources/assets/images/insta4.png": {
+    "file": "assets/insta4-Bmj1iegW.png",
+    "src": "src/Resources/assets/images/insta4.png"
+  },
+  "src/Resources/assets/images/insta5.png": {
+    "file": "assets/insta5-nElfNO_K.png",
+    "src": "src/Resources/assets/images/insta5.png"
+  },
   "src/Resources/assets/images/large-product-placeholder.webp": {
     "file": "assets/large-product-placeholder-B9xoAuKQ.webp",
     "src": "src/Resources/assets/images/large-product-placeholder.webp"
   },
+  "src/Resources/assets/images/logo-footer.svg": {
+    "file": "assets/logo-footer-CqFdebH8.svg",
+    "src": "src/Resources/assets/images/logo-footer.svg"
+  },
   "src/Resources/assets/images/logo.svg": {
-    "file": "assets/logo-CZWQQgOF.svg",
+    "file": "assets/logo-CUzzpijI.svg",
     "src": "src/Resources/assets/images/logo.svg"
   },
   "src/Resources/assets/images/medium-product-placeholder.webp": {
@@ -81,7 +113,7 @@
     "src": "src/Resources/assets/images/wishlist.png"
   },
   "src/Resources/assets/js/app.js": {
-    "file": "assets/app-Dk7aa5mf.js",
+    "file": "assets/app-BF1-1MFR.js",
     "name": "app",
     "src": "src/Resources/assets/js/app.js",
     "isEntry": true,
