@@ -81,12 +81,22 @@
 
     <div class="container mt-7 mx-auto max-lg:px-8 max-md:mt-8 max-sm:mt-7 max-sm:!px-4">
         <!-- Instagram Gallery Section -->
-        <div>
-            <h2 class="text-center text-xl mb-7 max-sm:text-xl">Shop Instagram</h2>
+        <div data-aos="fade-up">
+            <h2
+                class="text-center text-xl mb-7 max-sm:text-xl"
+                data-aos="fade-up"
+                data-aos-delay="500"
+            >
+                Shop Instagram
+            </h2>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 <!-- Image 1 -->
-                <div class="relative group overflow-hidden aspect-square">
+                <div
+                    class="relative group overflow-hidden aspect-square"
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                >
                     <img
                         src="{{ bagisto_asset('images/insta1.png') }}"
                         alt="Instagram post 1"
@@ -101,7 +111,11 @@
                 </div>
 
                 <!-- Image 2 -->
-                <div class="relative group overflow-hidden aspect-square">
+                <div
+                    class="relative group overflow-hidden aspect-square"
+                    data-aos="zoom-in"
+                    data-aos-delay="700"
+                >
                     <img
                         src="{{ bagisto_asset('images/insta2.png') }}"
                         alt="Instagram post 2"
@@ -116,7 +130,11 @@
                 </div>
 
                 <!-- Image 3 -->
-                <div class="relative group overflow-hidden aspect-square">
+                <div
+                    class="relative group overflow-hidden aspect-square"
+                    data-aos="zoom-in"
+                    data-aos-delay="900"
+                >
                     <img
                         src="{{ bagisto_asset('images/insta3.png') }}"
                         alt="Instagram post 3"
@@ -131,7 +149,11 @@
                 </div>
 
                 <!-- Image 4 -->
-                <div class="relative group overflow-hidden aspect-square">
+                <div
+                    class="relative group overflow-hidden aspect-square"
+                    data-aos="zoom-in"
+                    data-aos-delay="1100"
+                >
                     <img
                         src="{{ bagisto_asset('images/insta4.png') }}"
                         alt="Instagram post 4"
@@ -146,7 +168,11 @@
                 </div>
 
                 <!-- Image 5 -->
-                <div class="relative group overflow-hidden aspect-square">
+                <div
+                    class="relative group overflow-hidden aspect-square"
+                    data-aos="zoom-in"
+                    data-aos-delay="1300"
+                >
                     <img
                         src="{{ bagisto_asset('images/insta5.png') }}"
                         alt="Instagram post 5"

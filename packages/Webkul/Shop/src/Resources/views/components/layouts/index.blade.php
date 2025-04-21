@@ -50,6 +50,9 @@
 
         @bagistoVite(['src/Resources/assets/css/app.css', 'src/Resources/assets/js/app.js'])
 
+        <!-- Add AOS CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -137,6 +140,15 @@
         {!! view_render_event('bagisto.shop.layout.body.after') !!}
 
         @stack('scripts')
+
+        <!-- Add AOS JS and initialize -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+                once: true,
+            });
+        </script>
 
         {!! view_render_event('bagisto.shop.layout.vue-app-mount.before') !!}
         <script>
