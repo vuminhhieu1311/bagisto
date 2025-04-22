@@ -4571,7 +4571,7 @@ return [
             ],
 
             'powered-by' => [
-                'description' => 'Powered by :bagisto, an open-source project by :webkul.',
+                'description' => '©2025 Ladie Studio All rights reserved. Developed by Latech',
             ],
         ],
 
