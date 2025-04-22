@@ -2681,7 +2681,7 @@ return [
                         'file-name'      => 'Tên tệp',
                         'file-name-info' => 'Ví dụ: sitemap.xml',
                         'path'           => 'Đường dẫn',
-                        'path-info'      => 'Ví dụ: "/sitemap/" hoặc "/" cho đường dẫn gốc',
+                        'path-info'      => 'Ví dụ: \"/sitemap/\" hoặc \"/\" cho đường dẫn gốc',
                         'save-btn'       => 'Lưu sơ đồ trang',
                         'success'        => 'Đã tạo sơ đồ trang thành công',
                         'title'          => 'Tạo sơ đồ trang',
@@ -2700,7 +2700,7 @@ return [
                     'file-name-info' => 'Ví dụ: sitemap.xml',
                     'general'        => 'Tổng quan',
                     'path'           => 'Đường dẫn',
-                    'path-info'      => 'Ví dụ: "/sitemap/" hoặc "/" cho đường dẫn gốc',
+                    'path-info'      => 'Ví dụ: \"/sitemap/\" hoặc \"/\" cho đường dẫn gốc',
                     'save-btn'       => 'Lưu sơ đồ trang',
                 ],
 
@@ -3008,7 +3008,7 @@ return [
                 'delete-success'    => 'Đã xóa nhập khẩu thành công.',
                 'not-valid'         => 'Nhập khẩu không hợp lệ',
                 'nothing-to-import' => 'Không có tài nguyên nào để nhập khẩu.',
-                'setup-queue-error' => 'Vui lòng thay đổi trình điều khiển hàng đợi của bạn thành "database" hoặc "redis" để bắt đầu quá trình nhập khẩu.',
+                'setup-queue-error' => 'Vui lòng thay đổi trình điều khiển hàng đợi của bạn thành \"database\" hoặc \"redis\" để bắt đầu quá trình nhập khẩu.',
                 'update-success'    => 'Đã cập nhật nhập khẩu thành công.',
             ],
         ],
@@ -4063,7 +4063,7 @@ return [
                         'enable'                  => 'Kích hoạt',
                         'show-search-input-field' => 'Hiển thị ô nhập tìm kiếm',
                         'title'                   => 'Danh mục',
-                        'title-info'              => '"Danh mục" là các nhóm hoặc phân loại giúp tổ chức và nhóm các sản phẩm hoặc mặt hàng tương tự lại với nhau để dễ dàng duyệt và điều hướng.',
+                        'title-info'              => '\"Danh mục\" là các nhóm hoặc phân loại giúp tổ chức và nhóm các sản phẩm hoặc mặt hàng tương tự lại với nhau để dễ dàng duyệt và điều hướng.',
                     ],
                 ],
 
@@ -4102,7 +4102,7 @@ return [
                     'information' => [
                         'street-lines' => 'Các dòng trong địa chỉ đường phố',
                         'title'        => 'Thông tin',
-                        'title-info'   => '"Các dòng trong địa chỉ đường phố" là các phần riêng biệt của địa chỉ, thường được phân cách bằng dấu phẩy, cung cấp thông tin vị trí như số nhà, đường phố, thành phố và nhiều thông tin khác.',
+                        'title-info'   => '\"Các dòng trong địa chỉ đường phố\" là các phần riêng biệt của địa chỉ, thường được phân cách bằng dấu phẩy, cung cấp thông tin vị trí như số nhà, đường phố, thành phố và nhiều thông tin khác.',
                     ],
                 ],
 
@@ -4115,7 +4115,7 @@ return [
                         'site-key'   => 'Khóa trang web',
                         'status'     => 'Trạng thái',
                         'title'      => 'Thông tin xác thực',
-                        'title-info' => '"Sitemap: Bản đồ bố cục trang web cho công cụ tìm kiếm. Khóa bí mật: Mã bảo mật để mã hóa dữ liệu, xác thực hoặc bảo vệ quyền truy cập API."',
+                        'title-info' => '\"Sitemap: Bản đồ bố cục trang web cho công cụ tìm kiếm. Khóa bí mật: Mã bảo mật để mã hóa dữ liệu, xác thực hoặc bảo vệ quyền truy cập API.\"',
                     ],
 
                     'validations' => [
@@ -4131,7 +4131,7 @@ return [
                     'login-as-customer' => [
                         'allow-option' => 'Cho phép đăng nhập với tư cách khách hàng',
                         'title'        => 'Đăng nhập với tư cách khách hàng',
-                        'title-info'   => 'Bật tính năng "Đăng nhập với tư cách khách hàng".',
+                        'title-info'   => 'Bật tính năng \"Đăng nhập với tư cách khách hàng\".',
                     ],
 
                     'wishlist' => [
@@ -4166,13 +4166,13 @@ return [
                     'newsletter' => [
                         'subscription' => 'Cho phép đăng ký nhận bản tin',
                         'title'        => 'Đăng ký nhận bản tin',
-                        'title-info'   => '"Thông tin bản tin" chứa các cập nhật, ưu đãi hoặc nội dung được chia sẻ thường xuyên qua email cho người đăng ký, giúp họ luôn được thông tin và tương tác.',
+                        'title-info'   => '\"Thông tin bản tin\" chứa các cập nhật, ưu đãi hoặc nội dung được chia sẻ thường xuyên qua email cho người đăng ký, giúp họ luôn được thông tin và tương tác.',
                     ],
 
                     'email' => [
                         'email-verification' => 'Cho phép xác minh email',
                         'title'              => 'Xác minh email',
-                        'title-info'         => '"Xác minh email" xác nhận tính xác thực của địa chỉ email, thường bằng cách gửi liên kết xác nhận, tăng cường bảo mật tài khoản và độ tin cậy trong giao tiếp.',
+                        'title-info'         => '\"Xác minh email\" xác nhận tính xác thực của địa chỉ email, thường bằng cách gửi liên kết xác nhận, tăng cường bảo mật tài khoản và độ tin cậy trong giao tiếp.',
                     ],
 
                     'social-login' => [
@@ -4182,7 +4182,7 @@ return [
                         'enable-linkedin'   => 'Bật LinkedIn',
                         'enable-twitter'    => 'Bật Twitter',
                         'social-login'      => 'Đăng nhập qua mạng xã hội',
-                        'social-login-info' => '"Đăng nhập qua mạng xã hội" cho phép người dùng truy cập trang web bằng tài khoản mạng xã hội của họ, đơn giản hóa quy trình đăng ký và đăng nhập để thuận tiện.',
+                        'social-login-info' => '\"Đăng nhập qua mạng xã hội\" cho phép người dùng truy cập trang web bằng tài khoản mạng xã hội của họ, đơn giản hóa quy trình đăng ký và đăng nhập để thuận tiện.',
                     ],
                 ],
             ],
@@ -4262,7 +4262,7 @@ return [
                         'page-title'  => 'Miễn phí vận chuyển',
                         'status'      => 'Trạng thái',
                         'title'       => 'Tiêu đề',
-                        'title-info'  => '"Miễn phí vận chuyển" là phương thức vận chuyển không tính phí, và người bán sẽ chi trả chi phí vận chuyển để giao hàng đến người mua.',
+                        'title-info'  => '\"Miễn phí vận chuyển\" là phương thức vận chuyển không tính phí, và người bán sẽ chi trả chi phí vận chuyển để giao hàng đến người mua.',
                     ],
 
                     'flat-rate-shipping' => [
@@ -4287,7 +4287,7 @@ return [
                     'cash-on-delivery'               => 'Thanh toán khi nhận hàng',
                     'cash-on-delivery-info'          => 'Phương thức thanh toán khi khách hàng trả tiền mặt khi nhận hàng hóa hoặc dịch vụ tại nhà.',
                     'client-id'                      => 'ID khách hàng',
-                    'client-id-info'                 => 'Sử dụng "sb" để kiểm thử.',
+                    'client-id-info'                 => 'Sử dụng \"sb\" để kiểm thử.',
                     'client-secret'                  => 'Khóa bí mật',
                     'client-secret-info'             => 'Thêm khóa bí mật của bạn tại đây',
                     'description'                    => 'Mô tả',
@@ -4505,10 +4505,10 @@ return [
                     'customers'                       => 'Khách hàng',
                     'explore-all-categories'          => 'Xem tất cả danh mục',
                     'explore-all-customers'           => 'Xem tất cả khách hàng',
-                    'explore-all-matching-categories' => 'Xem tất cả danh mục phù hợp với ":query" (:count)',
-                    'explore-all-matching-customers'  => 'Xem tất cả khách hàng phù hợp với ":query" (:count)',
-                    'explore-all-matching-orders'     => 'Xem tất cả đơn hàng phù hợp với ":query" (:count)',
-                    'explore-all-matching-products'   => 'Xem tất cả sản phẩm phù hợp với ":query" (:count)',
+                    'explore-all-matching-categories' => 'Xem tất cả danh mục phù hợp với \":query\" (:count)',
+                    'explore-all-matching-customers'  => 'Xem tất cả khách hàng phù hợp với \":query\" (:count)',
+                    'explore-all-matching-orders'     => 'Xem tất cả đơn hàng phù hợp với \":query\" (:count)',
+                    'explore-all-matching-products'   => 'Xem tất cả sản phẩm phù hợp với \":query\" (:count)',
                     'explore-all-orders'              => 'Xem tất cả đơn hàng',
                     'explore-all-products'            => 'Xem tất cả sản phẩm',
                     'orders'                          => 'Đơn hàng',
@@ -4523,7 +4523,7 @@ return [
                 'attributes'               => 'Thuộc tính',
                 'booking-product'          => 'Đặt chỗ',
                 'campaigns'                => 'Chiến dịch',
-                'catalog'                  => 'Danh mục sản phẩm',
+                'catalog'                  => 'Sản phẩm',
                 'categories'               => 'Danh mục',
                 'channels'                 => 'Kênh bán hàng',
                 'cms'                      => 'CMS',
@@ -4828,7 +4828,7 @@ return [
     'errors' => [
         'dashboard' => 'Bảng điều khiển',
         'go-back'   => 'Quay lại',
-        'support'   => 'Nếu vấn đề vẫn tiếp tục, hãy liên hệ với chúng tôi tại <a href=":link" class=":class">:email</a> để được hỗ trợ.',
+        'support'   => 'Nếu vấn đề vẫn tiếp tục, hãy liên hệ với chúng tôi tại <a href=\":link\" class=\":class\">:email</a> để được hỗ trợ.',
 
         '404' => [
             'description' => 'Rất tiếc! Trang bạn đang tìm kiếm hiện không tồn tại. Có vẻ như chúng tôi không thể tìm thấy những gì bạn đang tìm kiếm.',
@@ -4871,12 +4871,12 @@ return [
     ],
 
     'footer' => [
-        'copy-right' => 'Được cung cấp bởi <a href="https://bagisto.com/" target="_blank">Bagisto</a>, Một dự án cộng đồng bởi <a href="https://webkul.com/" target="_blank">Webkul</a>',
+        'copy-right' => 'Được cung cấp bởi <a href=\"https://bagisto.com/\" target=\"_blank\">Bagisto</a>, Một dự án cộng đồng bởi <a href=\"https://webkul.com/\" target=\"_blank\">Webkul</a>',
     ],
 
     'emails' => [
         'dear'   => 'Kính gửi :admin_name',
-        'thanks' => 'Nếu bạn cần bất kỳ trợ giúp nào, vui lòng liên hệ với chúng tôi tại <a href=":link" style=":style">:email</a>.<br/>Cảm ơn bạn!',
+        'thanks' => 'Nếu bạn cần bất kỳ trợ giúp nào, vui lòng liên hệ với chúng tôi tại <a href=\":link\" style=\":style\">:email</a>.<br/>Cảm ơn bạn!',
 
         'admin' => [
             'forgot-password' => [
