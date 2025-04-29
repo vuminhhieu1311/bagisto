@@ -53,8 +53,9 @@ class ProductController extends APIController
             }
         }
 
-        $configurableOption = app(ConfigurableOption::class);
-        foreach ($products as $product) {
+        foreach ($products as $index => $product) {
+            $configurableOption = app(ConfigurableOption::class);
+
             $attributes = $configurableOption->getConfigurationConfig($product);
             if (empty ($attributes['attributes'])) {
                 continue;
