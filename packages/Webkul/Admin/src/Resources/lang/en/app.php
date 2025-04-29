@@ -4262,7 +4262,7 @@ return [
                         'page-title'  => 'Miễn phí vận chuyển',
                         'status'      => 'Trạng thái',
                         'title'       => 'Tiêu đề',
-                        'title-info'  => '\"Miễn phí vận chuyển\" là phương thức vận chuyển không tính phí, và người bán sẽ chi trả chi phí vận chuyển để giao hàng đến người mua.',
+                        'title-info'  => 'Miễn phí vận chuyển là phương thức vận chuyển không tính phí, và người bán sẽ chi trả chi phí vận chuyển để giao hàng đến người mua.',
                     ],
 
                     'flat-rate-shipping' => [

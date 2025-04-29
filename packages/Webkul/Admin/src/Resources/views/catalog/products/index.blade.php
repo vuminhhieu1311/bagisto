@@ -320,6 +320,7 @@
                                             name="type"
                                             rules="required"
                                             :label="trans('admin::app.catalog.products.index.create.type')"
+                                            value="configurable"
                                         >
                                             @foreach(config('product_types') as $key => $type)
                                                 <option value="{{ $key }}">
@@ -342,6 +343,7 @@
                                             name="attribute_family_id"
                                             rules="required"
                                             :label="trans('admin::app.catalog.products.index.create.family')"
+                                            value="{{ $families[0]->id }}"
                                         >
                                             @foreach($families as $family)
                                                 <option value="{{ $family->id }}">
