@@ -189,7 +189,7 @@
                     <x-slot:content class="!p-0">
                         <div class="grid gap-2.5 p-5 pb-0">
                             <p class="font-dmserif text-xl">
-                                @lang('shop::app.components.layouts.header.welcome')’
+                                @lang('shop::app.components.layouts.header.welcome')'
                                 {{ auth()->guard('customer')->user()->first_name }}
                             </p>
 
@@ -297,35 +297,47 @@
                 </span>
 
                 <div
-                    class="pointer-events-none absolute top-[78px] z-[1] max-h-[580px] w-max max-w-[1260px] translate-y-1 overflow-auto overflow-x-auto border border-b-0 border-l-0 border-r-0 border-t border-[#F3F3F3] bg-white p-9 opacity-0 shadow-[0_6px_6px_1px_rgba(0,0,0,.3)] transition duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:duration-200 group-hover:ease-in ltr:-left-9 rtl:-right-9"
+                    class="pointer-events-none absolute top-[78px] z-[1] max-h-[580px] w-max max-w-[1260px] translate-y-1 overflow-auto overflow-x-auto border border-b-0 border-l-0 border-r-0 border-t border-[#F3F3F3] bg-white p-6 opacity-0 shadow-[0_6px_6px_1px_rgba(0,0,0,.3)] transition duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-hover:duration-200 group-hover:ease-in ltr:-left-9 rtl:-right-9"
                     v-if="category.children.length"
                 >
-                    <div class="aigns flex justify-between gap-x-[70px]">
-                        <div
-                            class="grid w-full min-w-max max-w-[150px] flex-auto grid-cols-[1fr] content-start gap-5"
-                            v-for="pairCategoryChildren in pairCategoryChildren(category)"
-                        >
-                            <template v-for="secondLevelCategory in pairCategoryChildren">
-                                <p class="font-medium text-navyBlue">
-                                    <a :href="secondLevelCategory.url">
-                                        @{{ secondLevelCategory.name }}
-                                    </a>
-                                </p>
-
-                                <ul
-                                    class="grid grid-cols-[1fr] gap-3"
-                                    v-if="secondLevelCategory.children.length"
-                                >
-                                    <li
-                                        class="text-sm font-medium text-zinc-500"
-                                        v-for="thirdLevelCategory in secondLevelCategory.children"
-                                    >
-                                        <a :href="thirdLevelCategory.url">
-                                            @{{ thirdLevelCategory.name }}
+                    <div class="flex gap-x-[40px]">
+                        <!-- Category Links -->
+                        <div class="flex justify-between gap-x-[70px]">
+                            <div
+                                class="grid w-full min-w-max max-w-[150px] flex-auto grid-cols-[1fr] content-start gap-5"
+                                v-for="pairCategoryChildren in pairCategoryChildren(category)"
+                            >
+                                <template v-for="secondLevelCategory in pairCategoryChildren">
+                                    <p class="font-medium text-black">
+                                        <a :href="secondLevelCategory.url">
+                                            @{{ secondLevelCategory.name }}
                                         </a>
-                                    </li>
-                                </ul>
-                            </template>
+                                    </p>
+
+                                    <ul
+                                        class="grid grid-cols-[1fr] gap-3"
+                                        v-if="secondLevelCategory.children.length"
+                                    >
+                                        <li
+                                            class="text-sm text-zinc-500"
+                                            v-for="thirdLevelCategory in secondLevelCategory.children"
+                                        >
+                                            <a :href="thirdLevelCategory.url">
+                                                @{{ thirdLevelCategory.name }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </template>
+                            </div>
+                        </div>
+                        <!-- Category Logo -->
+                        <div class="w-[250px] flex-shrink-0">
+                            <img
+                                v-if="category.logo_url"
+                                :src="category.logo_url"
+                                :alt="category.name"
+                                class="w-full h-auto object-contain"
+                            />
                         </div>
                     </div>
                 </div>

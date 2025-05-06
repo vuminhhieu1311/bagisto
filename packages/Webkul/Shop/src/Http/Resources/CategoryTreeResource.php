@@ -20,6 +20,7 @@ class CategoryTreeResource extends JsonResource
             'name'      => $this->name,
             'slug'      => $this->slug,
             'url'       => $this->url,
+            'logo_url'  => $this->logo_url,
             'status'    => $this->status,
             'children'  => self::collection($this->children),
         ];
