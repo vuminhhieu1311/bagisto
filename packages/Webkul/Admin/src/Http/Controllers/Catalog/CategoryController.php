@@ -265,7 +265,7 @@ class CategoryController extends Controller
      */
     public function tree(): JsonResource
     {
-        $categories = $this->categoryRepository->getVisibleCategoryTree(core()->getRequestedChannel()->root_category_id);
+        $categories = $this->categoryRepository->getCategoryTree(core()->getRequestedChannel()->root_category_id);
 
         return CategoryTreeResource::collection($categories);
     }
