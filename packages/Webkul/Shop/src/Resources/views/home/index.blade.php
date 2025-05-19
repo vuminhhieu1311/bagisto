@@ -103,7 +103,7 @@
                         class="w-full h-full object-cover"
                     >
                     <a
-                        href="#"
+                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
                         class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                     >
                         <span class="icon-instagram text-white text-3xl"></span>
@@ -122,7 +122,7 @@
                         class="w-full h-full object-cover"
                     >
                     <a
-                        href="#"
+                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
                         class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                     >
                         <span class="icon-instagram text-white text-3xl"></span>
@@ -141,7 +141,7 @@
                         class="w-full h-full object-cover"
                     >
                     <a
-                        href="#"
+                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
                         class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                     >
                         <span class="icon-instagram text-white text-3xl"></span>
@@ -160,7 +160,7 @@
                         class="w-full h-full object-cover"
                     >
                     <a
-                        href="#"
+                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
                         class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                     >
                         <span class="icon-instagram text-white text-3xl"></span>
@@ -179,7 +179,7 @@
                         class="w-full h-full object-cover"
                     >
                     <a
-                        href="#"
+                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
                         class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
                     >
                         <span class="icon-instagram text-white text-3xl"></span>
