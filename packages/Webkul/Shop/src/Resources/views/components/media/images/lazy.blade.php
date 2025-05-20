@@ -59,7 +59,6 @@
             watch: {
                 src: {
                     handler(newSrc) {
-                        this.isLoading = true;
                         let lazyImage = document.getElementById('image-' + this.$.uid);
                         if (lazyImage) {
                             lazyImage.src = newSrc;
