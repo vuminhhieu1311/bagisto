@@ -22,12 +22,14 @@
                 >
                     <x-shop::media.images.lazy
                         class="after:content-[' '] relative bg-zinc-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)]"
-                        ::src="product.base_image.medium_image_url"
+                        ::src="imageUrl"
                         ::key="product.id"
                         ::index="product.id"
                         width="291"
                         height="300"
                         ::alt="product.name"
+                        @mouseover="handleMouseOver"
+                        @mouseleave="handleMouseLeave"
                     />
                 </a>
 
@@ -136,12 +138,14 @@
                 <a :href="`{{ route('shop.product_or_category.index', '') }}/${product.url_key}`">
                     <x-shop::media.images.lazy
                         class="after:content-[' '] relative min-w-[250px] bg-zinc-100 transition-all duration-300 after:block after:pb-[calc(100%+9px)] group-hover:scale-105"
-                        ::src="product.base_image.medium_image_url"
+                        ::src="imageUrl"
                         ::key="product.id"
                         ::index="product.id"
                         width="291"
                         height="300"
                         ::alt="product.name"
+                        @mouseover="handleMouseOver"
+                        @mouseleave="handleMouseLeave"
                     />
                 </a>
 
@@ -283,8 +287,8 @@
             data() {
                 return {
                     isCustomer: '{{ auth()->guard('customer')->check() }}',
-
                     isAddingToCart: false,
+                    imageUrl: this.product?.base_image?.medium_image_url || '',
                 }
             },
 
@@ -419,6 +423,22 @@
 
                             this.isAddingToCart = false;
                         });
+                },
+
+                handleMouseOver() {
+                    setTimeout(() => {
+                        if (this.product?.images?.[1]) {
+                            this.imageUrl = this.product.images[1].medium_image_url;
+                        }
+                    }, 200);
+                },
+
+                handleMouseLeave() {
+                    setTimeout(() => {
+                        if (this.product?.base_image) {
+                            this.imageUrl = this.product.base_image.medium_image_url;
+                        }
+                    }, 200);
                 },
             },
         });
