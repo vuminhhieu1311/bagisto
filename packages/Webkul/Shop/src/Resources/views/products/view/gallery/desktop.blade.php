@@ -66,18 +66,17 @@
     </div>
 
     <div
-        class="max-h-[610px] max-w-[560px]"
+        class="max-h-[610px] max-w-[560px] relative"
         v-show="! isMediaLoading"
     >
         <img
-            class="min-w-[450px] cursor-pointer rounded-xl"
+            class="min-w-[450px] cursor-pointer rounded-xl product-image"
             :src="baseFile.path"
-            v-if="baseFile.type == 'image'"
+            v-show="baseFile.type == 'image'"
             alt="{{ $product->name }}"
             width="560"
             height="610"
             tabindex="0"
-            @click="isImageZooming = !isImageZooming"
             @load="onMediaLoad()"
         />
 
@@ -90,7 +89,6 @@
                 controls
                 width="475"
                 alt="{{ $product->name }}"
-                @click="isImageZooming = !isImageZooming"
                 @loadeddata="onMediaLoad()"
                 :key="baseFile.path"
             >
@@ -102,3 +100,54 @@
         </div>
     </div>
 </div>
+
+@pushOnce('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+            const productImage = document.querySelector('.product-image');
+            console.log(productImage);
+            if (!productImage) return;
+
+            // Create magnifier element
+            const magnifier = document.createElement('div');
+            magnifier.className = 'magnifier hidden absolute border-2 border-gray-300 rounded-full pointer-events-none';
+            magnifier.style.width = '150px';
+            magnifier.style.height = '150px';
+            productImage.parentNode.appendChild(magnifier);
+
+            // Handle mouse move
+            productImage.addEventListener('mousemove', function(e) {
+                const rect = productImage.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                // Show magnifier
+                magnifier.classList.remove('hidden');
+
+                // Position magnifier
+                magnifier.style.left = (x - 75) + 'px';
+                magnifier.style.top = (y - 75) + 'px';
+
+                // Set background image
+                magnifier.style.backgroundImage = `url(${productImage.src})`;
+                magnifier.style.backgroundSize = `${productImage.width * 2}px ${productImage.height * 2}px`;
+                magnifier.style.backgroundPosition = `-${x * 2 - 75}px -${y * 2 - 75}px`;
+            });
+
+            // Hide magnifier when mouse leaves
+            productImage.addEventListener('mouseleave', function() {
+                magnifier.classList.add('hidden');
+            });
+        }, 1000); // Đợi 1 giây để đảm bảo DOM và ảnh đã load
+    });
+</script>
+
+<style>
+    .magnifier {
+        background-repeat: no-repeat;
+        box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85),
+                    0 0 7px 7px rgba(0, 0, 0, 0.25);
+    }
+</style>
+@endPushOnce
