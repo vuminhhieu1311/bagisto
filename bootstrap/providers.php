@@ -43,4 +43,9 @@ return [
     Webkul\Tax\Providers\TaxServiceProvider::class,
     Webkul\Theme\Providers\ThemeServiceProvider::class,
     Webkul\User\Providers\UserServiceProvider::class,
+
+    /**
+     * Webbycrown's service providers.
+     */
+    Webbycrown\BlogBagisto\Providers\BlogServiceProvider::class,
 ];
