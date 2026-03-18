@@ -79,113 +79,85 @@
         @endswitch
     @endforeach
 
-    <div class="container mt-7 mx-auto max-lg:px-8 max-md:mt-8 max-sm:mt-7 max-sm:!px-4">
-        <!-- Instagram Gallery Section -->
-        <div data-aos="fade-up">
-            <h2
-                class="text-center text-xl mb-7 max-sm:text-xl"
-                data-aos="fade-up"
-                data-aos-delay="500"
-            >
-                Shop Instagram
-            </h2>
+    @php
+        $instagramGalleryEnabled = core()->getConfigData('general.design.instagram_gallery.enabled') ?? true;
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <!-- Image 1 -->
-                <div
-                    class="relative group overflow-hidden aspect-square"
-                    data-aos="zoom-in"
+        $defaultInstagramLink = 'https://www.instagram.com/ladiestudio._/';
+
+        $instagramGalleryTitle = core()->getConfigData('general.design.instagram_gallery.title')
+            ?: trans('shop::app.home.index.instagram-gallery');
+
+        $instagramGalleryItems = [
+            [
+                'image' => core()->getConfigData('general.design.instagram_gallery.image_1'),
+                'link'  => core()->getConfigData('general.design.instagram_gallery.link_1') ?: $defaultInstagramLink,
+                'aos_delay' => 500,
+            ],
+            [
+                'image' => core()->getConfigData('general.design.instagram_gallery.image_2'),
+                'link'  => core()->getConfigData('general.design.instagram_gallery.link_2') ?: $defaultInstagramLink,
+                'aos_delay' => 700,
+            ],
+            [
+                'image' => core()->getConfigData('general.design.instagram_gallery.image_3'),
+                'link'  => core()->getConfigData('general.design.instagram_gallery.link_3') ?: $defaultInstagramLink,
+                'aos_delay' => 900,
+            ],
+            [
+                'image' => core()->getConfigData('general.design.instagram_gallery.image_4'),
+                'link'  => core()->getConfigData('general.design.instagram_gallery.link_4') ?: $defaultInstagramLink,
+                'aos_delay' => 1100,
+            ],
+            [
+                'image' => core()->getConfigData('general.design.instagram_gallery.image_5'),
+                'link'  => core()->getConfigData('general.design.instagram_gallery.link_5') ?: $defaultInstagramLink,
+                'aos_delay' => 1300,
+            ],
+        ];
+
+        $instagramGalleryItems = array_values(array_filter($instagramGalleryItems, fn ($item) => ! empty($item['image'])));
+    @endphp
+
+    @if ($instagramGalleryEnabled && count($instagramGalleryItems))
+        <div class="container mt-7 mx-auto max-lg:px-8 max-md:mt-8 max-sm:mt-7 max-sm:!px-4">
+            <div data-aos="fade-up" aria-label="{{ trans('shop::app.home.index.instagram-gallery') }}">
+                <h2
+                    class="text-center text-xl mb-7 max-sm:text-xl"
+                    data-aos="fade-up"
                     data-aos-delay="500"
                 >
-                    <img
-                        src="{{ bagisto_asset('images/insta1.png') }}"
-                        alt="Instagram post 1"
-                        class="w-full h-full object-cover"
-                    >
-                    <a
-                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
-                        class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                    >
-                        <span class="icon-instagram text-white text-3xl"></span>
-                    </a>
-                </div>
+                    {{ $instagramGalleryTitle }}
+                </h2>
 
-                <!-- Image 2 -->
-                <div
-                    class="relative group overflow-hidden aspect-square"
-                    data-aos="zoom-in"
-                    data-aos-delay="700"
-                >
-                    <img
-                        src="{{ bagisto_asset('images/insta2.png') }}"
-                        alt="Instagram post 2"
-                        class="w-full h-full object-cover"
-                    >
-                    <a
-                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
-                        class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                    >
-                        <span class="icon-instagram text-white text-3xl"></span>
-                    </a>
-                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    @foreach ($instagramGalleryItems as $index => $item)
+                        @php
+                            $imageUrl = Storage::url($item['image']);
+                        @endphp
 
-                <!-- Image 3 -->
-                <div
-                    class="relative group overflow-hidden aspect-square"
-                    data-aos="zoom-in"
-                    data-aos-delay="900"
-                >
-                    <img
-                        src="{{ bagisto_asset('images/insta3.png') }}"
-                        alt="Instagram post 3"
-                        class="w-full h-full object-cover"
-                    >
-                    <a
-                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
-                        class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                    >
-                        <span class="icon-instagram text-white text-3xl"></span>
-                    </a>
-                </div>
+                        <div
+                            class="relative group overflow-hidden aspect-square"
+                            data-aos="zoom-in"
+                            data-aos-delay="{{ $item['aos_delay'] }}"
+                        >
+                            <img
+                                src="{{ $imageUrl }}"
+                                alt="{{ trans('shop::app.home.index.instagram-post', ['number' => $index + 1]) }}"
+                                class="w-full h-full object-cover"
+                            >
 
-                <!-- Image 4 -->
-                <div
-                    class="relative group overflow-hidden aspect-square"
-                    data-aos="zoom-in"
-                    data-aos-delay="1100"
-                >
-                    <img
-                        src="{{ bagisto_asset('images/insta4.png') }}"
-                        alt="Instagram post 4"
-                        class="w-full h-full object-cover"
-                    >
-                    <a
-                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
-                        class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                    >
-                        <span class="icon-instagram text-white text-3xl"></span>
-                    </a>
-                </div>
-
-                <!-- Image 5 -->
-                <div
-                    class="relative group overflow-hidden aspect-square"
-                    data-aos="zoom-in"
-                    data-aos-delay="1300"
-                >
-                    <img
-                        src="{{ bagisto_asset('images/insta5.png') }}"
-                        alt="Instagram post 5"
-                        class="w-full h-full object-cover"
-                    >
-                    <a
-                        href="https://www.instagram.com/ladiestudio._/" target="_blank"
-                        class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
-                    >
-                        <span class="icon-instagram text-white text-3xl"></span>
-                    </a>
+                            <a
+                                href="{{ $item['link'] }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                            >
+                                <span class="icon-instagram text-white text-3xl"></span>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
+    @endif
 </x-shop::layouts>

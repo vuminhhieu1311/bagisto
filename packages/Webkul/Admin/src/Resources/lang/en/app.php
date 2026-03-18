@@ -3760,6 +3760,23 @@ return [
                         'title'      => 'Logo quản trị',
                         'title-info' => 'Cấu hình hình ảnh logo và favicon cho giao diện trang web của bạn để tăng cường thương hiệu và nhận diện.',
                     ],
+
+                    'instagram-gallery' => [
+                        'enabled'       => 'Bật Instagram gallery',
+                        'image-1'       => 'Ảnh 1',
+                        'image-2'       => 'Ảnh 2',
+                        'image-3'       => 'Ảnh 3',
+                        'image-4'       => 'Ảnh 4',
+                        'image-5'       => 'Ảnh 5',
+                        'link-1'        => 'Link 1',
+                        'link-2'        => 'Link 2',
+                        'link-3'        => 'Link 3',
+                        'link-4'        => 'Link 4',
+                        'link-5'        => 'Link 5',
+                        'section-title' => 'Tiêu đề',
+                        'title'         => 'Instagram gallery (Homepage)',
+                        'title-info'    => 'Cấu hình các ảnh và liên kết hiển thị ở Instagram gallery trên trang chủ. Có thể cấu hình theo kênh (channel).',
+                    ],
                 ],
 
                 'magic-ai' => [

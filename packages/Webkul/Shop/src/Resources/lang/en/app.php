@@ -1077,6 +1077,8 @@ return [
         'index' => [
             'categories-carousel' => 'Trình chiếu danh mục',
             'image-carousel'      => 'Trình chiếu hình ảnh',
+            'instagram-gallery'   => 'Instagram gallery',
+            'instagram-post'      => 'Bài đăng Instagram :number',
             'offer'               => 'Giảm giá đến 40% cho đơn hàng đầu tiên của bạn MUA NGAY',
             'product-carousel'    => 'Trình chiếu sản phẩm',
             'resend-verify-email' => 'Gửi lại email xác thực',
