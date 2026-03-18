@@ -68,6 +68,10 @@ return [
         'redirect'      => env('GOOGLE_CALLBACK_URL'),
     ],
 
+    'google_analytics' => [
+        'measurement_id' => env('GOOGLE_ANALYTICS_MEASUREMENT_ID', 'G-D7EJHKXKVQ'),
+    ],
+
     'linkedin-openid' => [
         'client_id'     => env('LINKEDIN_CLIENT_ID'),
         'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
