@@ -70,6 +70,14 @@
                     <!-- Mobile category view -->
                     <v-mobile-category></v-mobile-category>
 
+                    <a
+                        href="/blog"
+                        class="mt-2 flex items-center justify-between text-base font-semibold transition-all"
+                        aria-label="@lang('shop::app.components.layouts.header.blog')"
+                    >
+                        @lang('shop::app.components.layouts.header.blog')
+                    </a>
+
                     {!! view_render_event('bagisto.shop.components.layouts.header.mobile.drawer.categories.after') !!}
                 </x-slot>
 

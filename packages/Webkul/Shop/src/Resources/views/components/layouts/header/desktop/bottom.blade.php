@@ -48,6 +48,15 @@
             </div>
         </v-desktop-category>
 
+        <a
+            href="/blog"
+            class="inline-block"
+            aria-label="@lang('shop::app.components.layouts.header.blog')"
+            style="margin-left: -15px;"
+        >
+            @lang('shop::app.components.layouts.header.blog')
+        </a>
+
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.after') !!}
     </div>
 

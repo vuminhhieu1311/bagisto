@@ -485,6 +485,7 @@ return [
             'header' => [
                 'account'           => 'Tài khoản',
                 'bagisto'           => 'Bagisto',
+                'blog'              => 'Tin tức',
                 'cart'              => 'Giỏ hàng',
                 'compare'           => 'So sánh',
                 'dropdown-text'     => 'Quản lý giỏ hàng, đơn hàng & danh sách yêu thích',
