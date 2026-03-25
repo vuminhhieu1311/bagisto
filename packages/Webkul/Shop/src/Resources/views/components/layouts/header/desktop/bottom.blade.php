@@ -57,6 +57,14 @@
             @lang('shop::app.components.layouts.header.blog')
         </a>
 
+        <a
+            href="{{ route('shop.cms.page', ['slug' => 'about-us']) }}"
+            class="inline-block px-5 pt-1"
+            aria-label="@lang('shop::app.components.layouts.header.about-us')"
+        >
+            @lang('shop::app.components.layouts.header.about-us')
+        </a>
+
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.after') !!}
     </div>
 

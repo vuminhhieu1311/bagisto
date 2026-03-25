@@ -484,6 +484,7 @@ return [
         'layouts' => [
             'header' => [
                 'account'           => 'Tài khoản',
+                'about-us'          => 'Về chúng tôi',
                 'bagisto'           => 'Bagisto',
                 'blog'              => 'Tin tức',
                 'cart'              => 'Giỏ hàng',
