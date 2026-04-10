@@ -46,14 +46,6 @@
     <meta property="og:url" content="{{ route('shop.product_or_category.index', $product->url_key) }}" />
 @endPush
 
-@push('styles')
-    <style>
-        .product-description p {
-            margin-bottom: 16px;
-        }
-    </style>
-@endpush
-
 <!-- Page Layout -->
 <x-shop::layouts>
     <!-- Page Title -->
@@ -95,9 +87,9 @@
                     :is-selected="true"
                 >
                     <div class="product-description container mt-[60px] max-1180:px-5">
-                        <p class="text-lg text-zinc-500 max-1180:text-sm">
+                        <div class="cms-content text-lg text-zinc-500 max-1180:text-sm">
                             {!! $product->description !!}
-                        </p>
+                        </div>
                     </div>
                 </x-shop::tabs.item>
 
@@ -179,7 +171,7 @@
             </x-slot>
 
             <x-slot:content class="max-sm:px-0">
-                <div class="product-description mb-5 text-lg text-zinc-500 max-1180:text-sm max-md:mb-1 max-md:px-4">
+                <div class="product-description cms-content mb-5 text-lg text-zinc-500 max-1180:text-sm max-md:mb-1 max-md:px-4">
                     {!! $product->description !!}
                 </div>
             </x-slot>
@@ -378,9 +370,9 @@
 
                                 {!! view_render_event('bagisto.shop.products.short_description.before', ['product' => $product]) !!}
 
-                                <p class="mt-6 text-lg text-zinc-500 max-sm:mt-1.5 max-sm:text-sm">
+                                <div class="cms-content mt-6 text-lg text-zinc-500 max-sm:mt-1.5 max-sm:text-sm">
                                     {!! $product->short_description !!}
-                                </p>
+                                </div>
 
                                 {!! view_render_event('bagisto.shop.products.short_description.after', ['product' => $product]) !!}
 

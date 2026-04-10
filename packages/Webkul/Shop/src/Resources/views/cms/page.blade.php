@@ -16,6 +16,8 @@
 
     <!-- Page Content -->
     <div class="container mt-8 px-[60px] max-lg:px-8">
-        {!! $page->html_content !!}
+        <div class="cms-content">
+            {!! $page->html_content !!}
+        </div>
     </div>
 </x-shop::layouts>

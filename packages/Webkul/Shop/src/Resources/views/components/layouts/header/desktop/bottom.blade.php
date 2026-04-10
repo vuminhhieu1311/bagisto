@@ -50,19 +50,23 @@
 
         <a
             href="/blog"
-            class="inline-block"
+            class="group relative flex h-[77px] items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
             aria-label="@lang('shop::app.components.layouts.header.blog')"
-            style="margin-left: -15px;"
+            style="margin-left: -16px;"
         >
-            @lang('shop::app.components.layouts.header.blog')
+            <span class="inline-block pt-1">
+                @lang('shop::app.components.layouts.header.blog')
+            </span>
         </a>
 
         <a
             href="{{ route('shop.cms.page', ['slug' => 'about-us']) }}"
-            class="inline-block"
+            class="group relative flex h-[77px] items-center border-b-4 border-transparent hover:border-b-4 hover:border-navyBlue"
             aria-label="@lang('shop::app.components.layouts.header.about-us')"
         >
-            @lang('shop::app.components.layouts.header.about-us')
+            <span class="inline-block pt-1">
+                @lang('shop::app.components.layouts.header.about-us')
+            </span>
         </a>
 
         {!! view_render_event('bagisto.shop.components.layouts.header.desktop.bottom.category.after') !!}

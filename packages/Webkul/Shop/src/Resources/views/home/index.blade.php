@@ -30,53 +30,156 @@
     @foreach ($customizations as $customization)
         @php ($data = $customization->options) @endphp
 
-        <!-- Static content -->
-        @switch ($customization->type)
-            @case ($customization::IMAGE_CAROUSEL)
-                <!-- Image Carousel -->
-                <x-shop::carousel
-                    :options="$data"
-                    aria-label="{{ trans('shop::app.home.index.image-carousel') }}"
-                />
+        @if ($customization->id === 15)
+            @php
+                $homeBannersEnabled = core()->getConfigData('general.design.home_banners.enabled') ?? true;
 
-                @break
-            @case ($customization::STATIC_CONTENT)
-                <!-- push style -->
-                @if (! empty($data['css']))
-                    @push ('styles')
-                        <style>
-                            {{ $data['css'] }}
-                        </style>
-                    @endpush
-                @endif
+                $homeBanners = [
+                    [
+                        'image'     => core()->getConfigData('general.design.home_banners.image_1'),
+                        'link'      => core()->getConfigData('general.design.home_banners.link_1') ?: '/shop',
+                        'aos_delay' => 200,
+                        'fallback'  => 'storage/theme/15/3ItN8XRle62WDIxKupltEEjOzAk5j08hyANvaVdG.webp',
+                    ],
+                    [
+                        'image'     => core()->getConfigData('general.design.home_banners.image_2'),
+                        'link'      => core()->getConfigData('general.design.home_banners.link_2') ?: '/trending',
+                        'aos_delay' => 500,
+                        'fallback'  => 'storage/theme/15/NS6Dku193bePXXfIqihDxlv11RbU4UdAhqHqZ8PD.webp',
+                    ],
+                    [
+                        'image'     => core()->getConfigData('general.design.home_banners.image_3'),
+                        'link'      => core()->getConfigData('general.design.home_banners.link_3') ?: '/shop',
+                        'aos_delay' => 700,
+                        'fallback'  => 'storage/theme/15/HiLy5fSZvSCjpNSyjejzD2lxKdqKdgfX3O83ROIY.webp',
+                    ],
+                ];
+            @endphp
 
-                <!-- render html -->
-                @if (! empty($data['html']))
-                    {!! $data['html'] !!}
-                @endif
+            <div class="product-showcase mx-auto container mt-12 max-lg:px-8 max-md:mt-8 max-sm:mt-7 max-sm:!px-4">
+                <p class="showcase-description" data-aos="fade-up">Nâng tầm phong cách sống với tủ đồ thông minh và đẳng cấp hơn.
+                    <br>Bộ sưu tập của chúng tôi được thiết kế bền vững, hướng đến giá trị lâu dài.</p>
+                <div class="product-grid grid grid-cols-1 md:grid-cols-3 gap-6 mt-5">
+                    @if ($homeBannersEnabled)
+                        @foreach ($homeBanners as $banner)
+                            @php
+                                $bannerSrc = ! empty($banner['image'])
+                                    ? Storage::url($banner['image'])
+                                    : $banner['fallback'];
+                            @endphp
 
-                @break
-            @case ($customization::CATEGORY_CAROUSEL)
-                <!-- Categories carousel -->
-                <x-shop::categories.carousel
-                    :title="$data['title'] ?? ''"
-                    :src="route('shop.api.categories.index', $data['filters'] ?? [])"
-                    :navigation-link="route('shop.home.index')"
-                    aria-label="{{ trans('shop::app.home.index.categories-carousel') }}"
-                />
+                            <div
+                                class="product-item relative group overflow-hidden"
+                                data-aos="zoom-in"
+                                data-aos-delay="{{ $banner['aos_delay'] }}"
+                            >
+                                <a href="{{ $banner['link'] }}">
+                                    <img
+                                        class="lazy product-image w-full h-full object-cover"
+                                        data-src="{{ $bannerSrc }}"
+                                    >
+                                </a>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        @elseif ($customization->id === 8)
+            @php
+                $homeCollectionsEnabled = core()->getConfigData('general.design.home_collections.enabled') ?? true;
 
-                @break
-            @case ($customization::PRODUCT_CAROUSEL)
-                <!-- Product Carousel -->
-                <x-shop::products.carousel
-                    :title="$data['title'] ?? ''"
-                    :src="route('shop.api.products.index', $data['filters'] ?? [])"
-                    :navigation-link="route('shop.search.index', $data['filters'] ?? [])"
-                    aria-label="{{ trans('shop::app.home.index.product-carousel') }}"
-                />
+                $homeCollections = [
+                    [
+                        'image'     => core()->getConfigData('general.design.home_collections.image_1'),
+                        'link'      => core()->getConfigData('general.design.home_collections.link_1') ?: '/shop',
+                        'aos_delay' => 600,
+                        'fallback'  => 'storage/theme/8/9KMP8wOUTKQjlfB47E5hMQYFqFXt83g88ppsZqIm.webp',
+                    ],
+                    [
+                        'image'     => core()->getConfigData('general.design.home_collections.image_2'),
+                        'link'      => core()->getConfigData('general.design.home_collections.link_2') ?: '/shop',
+                        'aos_delay' => 800,
+                        'fallback'  => 'storage/theme/8/ledTRLKJauCPuwbcCFV0VL3icISrd5CcASNNcl0a.webp',
+                    ],
+                ];
+            @endphp
 
-                @break
-        @endswitch
+            <div class="collection-section container mt-10 mb-10 max-lg:px-8 max-md:mt-8 max-sm:mt-7 max-sm:!px-4">
+                <div class="collection-card-wrapper grid grid-cols-2 gap-6 max-md:grid-cols-1">
+                    @if ($homeCollectionsEnabled)
+                        @foreach ($homeCollections as $index => $collection)
+                            @php
+                                $collectionSrc = ! empty($collection['image'])
+                                    ? Storage::url($collection['image'])
+                                    : $collection['fallback'];
+                            @endphp
+
+                            <div
+                                class="single-collection-card"
+                                data-aos="{{ $index === 0 ? 'fade-right' : 'fade-left' }}"
+                                data-aos-delay="{{ $collection['aos_delay'] }}"
+                            >
+                                <a href="{{ $collection['link'] }}">
+                                    <img
+                                        class="lazy"
+                                        data-src="{{ $collectionSrc }}"
+                                        alt="{{ trans('shop::app.home.index.instagram-post', ['number' => $index + 1]) }}"
+                                    >
+                                </a>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        @else
+            <!-- Static content -->
+            @switch ($customization->type)
+                @case ($customization::IMAGE_CAROUSEL)
+                    <!-- Image Carousel -->
+                    <x-shop::carousel
+                        :options="$data"
+                        aria-label="{{ trans('shop::app.home.index.image-carousel') }}"
+                    />
+
+                    @break
+                @case ($customization::STATIC_CONTENT)
+                    <!-- push style -->
+                    @if (! empty($data['css']))
+                        @push ('styles')
+                            <style>
+                                {{ $data['css'] }}
+                            </style>
+                        @endpush
+                    @endif
+
+                    <!-- render html -->
+                    @if (! empty($data['html']))
+                        {!! $data['html'] !!}
+                    @endif
+
+                    @break
+                @case ($customization::CATEGORY_CAROUSEL)
+                    <!-- Categories carousel -->
+                    <x-shop::categories.carousel
+                        :title="$data['title'] ?? ''"
+                        :src="route('shop.api.categories.index', $data['filters'] ?? [])"
+                        :navigation-link="route('shop.home.index')"
+                        aria-label="{{ trans('shop::app.home.index.categories-carousel') }}"
+                    />
+
+                    @break
+                @case ($customization::PRODUCT_CAROUSEL)
+                    <!-- Product Carousel -->
+                    <x-shop::products.carousel
+                        :title="$data['title'] ?? ''"
+                        :src="route('shop.api.products.index', $data['filters'] ?? [])"
+                        :navigation-link="route('shop.search.index', $data['filters'] ?? [])"
+                        aria-label="{{ trans('shop::app.home.index.product-carousel') }}"
+                    />
+
+                    @break
+            @endswitch
+        @endif
     @endforeach
 
     @php

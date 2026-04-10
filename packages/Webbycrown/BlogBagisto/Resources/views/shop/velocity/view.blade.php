@@ -59,7 +59,9 @@ $channel = core()->getCurrentChannel();
                                                         </div>
                                                     </div>
 
-                                                    {!! $blog->description !!}
+                                                    <div class="cms-content">
+                                                        {!! $blog->description !!}
+                                                    </div>
                                                 </div>
                                             </section>
                                         </div>
@@ -137,7 +139,9 @@ $channel = core()->getCurrentChannel();
                                                         @endif
 
                                                         <div class="card-text text-justify">
-                                                            {!! $related_blog->short_description !!}
+                                                            <div class="cms-content">
+                                                                {!! $related_blog->short_description !!}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="card-footer">

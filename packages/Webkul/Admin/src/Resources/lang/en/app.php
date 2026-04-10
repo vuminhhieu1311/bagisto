@@ -3777,6 +3777,28 @@ return [
                         'title'         => 'Instagram gallery (Homepage)',
                         'title-info'    => 'Cấu hình các ảnh và liên kết hiển thị ở Instagram gallery trên trang chủ. Có thể cấu hình theo kênh (channel).',
                     ],
+
+                    'home-banners' => [
+                        'enabled'    => 'Bật Home banners',
+                        'image-1'    => 'Ảnh 1',
+                        'image-2'    => 'Ảnh 2',
+                        'image-3'    => 'Ảnh 3',
+                        'link-1'     => 'Link 1',
+                        'link-2'     => 'Link 2',
+                        'link-3'     => 'Link 3',
+                        'title'      => 'Home banners (Homepage)',
+                        'title-info' => 'Cấu hình 3 ảnh banner trên trang chủ và link tương ứng. Có thể cấu hình theo kênh (channel).',
+                    ],
+
+                    'home-collections' => [
+                        'enabled'    => 'Bật Home collections',
+                        'image-1'    => 'Ảnh 1',
+                        'image-2'    => 'Ảnh 2',
+                        'link-1'     => 'Link 1',
+                        'link-2'     => 'Link 2',
+                        'title'      => 'Home collections (Homepage)',
+                        'title-info' => 'Cấu hình 2 ảnh collection trên trang chủ và link tương ứng. Có thể cấu hình theo kênh (channel).',
+                    ],
                 ],
 
                 'magic-ai' => [

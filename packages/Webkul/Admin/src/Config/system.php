@@ -133,7 +133,7 @@ return [
         'key'    => 'general.design.instagram_gallery',
         'name'   => 'admin::app.configuration.index.general.design.instagram-gallery.title',
         'info'   => 'admin::app.configuration.index.general.design.instagram-gallery.title-info',
-        'sort'   => 2,
+        'sort'   => 99,
         'fields' => [
             [
                 'name'          => 'enabled',
@@ -204,6 +204,94 @@ return [
             ], [
                 'name'          => 'link_5',
                 'title'         => 'admin::app.configuration.index.general.design.instagram-gallery.link-5',
+                'type'          => 'text',
+                'channel_based' => true,
+                'validation'    => 'url',
+            ],
+        ],
+    ], [
+        'key'    => 'general.design.home_banners',
+        'name'   => 'admin::app.configuration.index.general.design.home-banners.title',
+        'info'   => 'admin::app.configuration.index.general.design.home-banners.title-info',
+        'sort'   => 3,
+        'fields' => [
+            [
+                'name'          => 'enabled',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.enabled',
+                'type'          => 'boolean',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'image_1',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.image-1',
+                'type'          => 'image',
+                'channel_based' => true,
+                'validation'    => 'mimes:bmp,jpeg,jpg,png,webp,svg',
+            ], [
+                'name'          => 'link_1',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.link-1',
+                'type'          => 'text',
+                'channel_based' => true,
+                'validation'    => 'url',
+            ], [
+                'name'          => 'image_2',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.image-2',
+                'type'          => 'image',
+                'channel_based' => true,
+                'validation'    => 'mimes:bmp,jpeg,jpg,png,webp,svg',
+            ], [
+                'name'          => 'link_2',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.link-2',
+                'type'          => 'text',
+                'channel_based' => true,
+                'validation'    => 'url',
+            ], [
+                'name'          => 'image_3',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.image-3',
+                'type'          => 'image',
+                'channel_based' => true,
+                'validation'    => 'mimes:bmp,jpeg,jpg,png,webp,svg',
+            ], [
+                'name'          => 'link_3',
+                'title'         => 'admin::app.configuration.index.general.design.home-banners.link-3',
+                'type'          => 'text',
+                'channel_based' => true,
+                'validation'    => 'url',
+            ],
+        ],
+    ], [
+        'key'    => 'general.design.home_collections',
+        'name'   => 'admin::app.configuration.index.general.design.home-collections.title',
+        'info'   => 'admin::app.configuration.index.general.design.home-collections.title-info',
+        'sort'   => 4,
+        'fields' => [
+            [
+                'name'          => 'enabled',
+                'title'         => 'admin::app.configuration.index.general.design.home-collections.enabled',
+                'type'          => 'boolean',
+                'channel_based' => true,
+                'locale_based'  => false,
+            ], [
+                'name'          => 'image_1',
+                'title'         => 'admin::app.configuration.index.general.design.home-collections.image-1',
+                'type'          => 'image',
+                'channel_based' => true,
+                'validation'    => 'mimes:bmp,jpeg,jpg,png,webp,svg',
+            ], [
+                'name'          => 'link_1',
+                'title'         => 'admin::app.configuration.index.general.design.home-collections.link-1',
+                'type'          => 'text',
+                'channel_based' => true,
+                'validation'    => 'url',
+            ], [
+                'name'          => 'image_2',
+                'title'         => 'admin::app.configuration.index.general.design.home-collections.image-2',
+                'type'          => 'image',
+                'channel_based' => true,
+                'validation'    => 'mimes:bmp,jpeg,jpg,png,webp,svg',
+            ], [
+                'name'          => 'link_2',
+                'title'         => 'admin::app.configuration.index.general.design.home-collections.link-2',
                 'type'          => 'text',
                 'channel_based' => true,
                 'validation'    => 'url',

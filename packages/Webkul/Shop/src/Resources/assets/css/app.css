@@ -527,4 +527,65 @@ img.lazy {
     .skip-to-main-content-link:focus {
         @apply ltr:left-1/2 rtl:right-1/2 ltr:translate-x-1/2 rtl:translate-x-[-50%] opacity-100;
     }
+
+    .cms-content {
+        @apply text-base leading-7 text-zinc-800;
+    }
+
+    .cms-content h1 {
+        @apply mt-6 mb-4 text-3xl font-semibold leading-tight text-black;
+    }
+
+    .cms-content h2 {
+        @apply mt-6 mb-3 text-2xl font-semibold leading-tight text-black;
+    }
+
+    .cms-content h3 {
+        @apply mt-5 mb-2 text-xl font-semibold leading-tight text-black;
+    }
+
+    .cms-content p {
+        @apply my-3;
+    }
+
+    .cms-content a {
+        @apply text-navyBlue underline underline-offset-4;
+    }
+
+    .cms-content ul {
+        @apply my-4 list-disc pl-6;
+    }
+
+    .cms-content ol {
+        @apply my-4 list-decimal pl-6;
+    }
+
+    .cms-content li {
+        @apply my-2;
+    }
+
+    .cms-content hr {
+        @apply my-6 border-zinc-200;
+    }
+
+    .cms-content blockquote {
+        @apply my-5 border-l-4 border-zinc-200 pl-4 italic text-zinc-700;
+    }
+
+    .cms-content table {
+        @apply my-6 w-full border-collapse text-left;
+    }
+
+    .cms-content th,
+    .cms-content td {
+        @apply border border-zinc-200 px-3 py-2 align-top;
+    }
+
+    .cms-content th {
+        @apply bg-zinc-50 font-semibold text-black;
+    }
+
+    .cms-content img {
+        @apply my-5 max-w-full rounded-xl;
+    }
 }
