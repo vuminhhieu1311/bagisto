@@ -48,6 +48,18 @@ class UpdateCreateCatalogRuleIndex implements ShouldQueue
             app(CatalogRuleIndex::class)->cleanProductIndices($productIds);
         }
 
+        /**
+         * If the rule matches variants (simple children of configurable), we also need to
+         * reindex their configurable parents so storefront/API price ranges reflect discounts.
+         */
+        $parentIds = app(ProductRepository::class)
+            ->whereIn('id', $productIds)
+            ->whereNotNull('parent_id')
+            ->pluck('parent_id')
+            ->unique();
+
+        $productIds = $productIds->merge($parentIds)->unique();
+
         while (true) {
             $paginator = app(ProductRepository::class)
                 ->whereIn('id', $productIds)
