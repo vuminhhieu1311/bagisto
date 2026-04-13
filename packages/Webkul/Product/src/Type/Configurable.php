@@ -335,12 +335,18 @@ class Configurable extends AbstractType
      */
     public function getProductPrices()
     {
-        $minPrice = $this->getMinimalPrice();
+        $regularMinPrice = $this->getRegularMinimalPrice();
+        $finalMinPrice   = $this->getMinimalPrice();
 
         return [
             'regular' => [
-                'price'           => $minPrice,
-                'formatted_price' => core()->currency($minPrice),
+                'price'           => core()->convertPrice($regularMinPrice),
+                'formatted_price' => core()->currency($regularMinPrice),
+            ],
+
+            'final'   => [
+                'price'           => core()->convertPrice($finalMinPrice),
+                'formatted_price' => core()->currency($finalMinPrice),
             ],
         ];
     }
