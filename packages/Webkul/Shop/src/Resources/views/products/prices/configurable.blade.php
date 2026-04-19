@@ -1,8 +1,14 @@
+@php
+    $regularAmount = (float) ($prices['regular']['price'] ?? 0);
+    $finalAmount = (float) ($prices['final']['price'] ?? 0);
+    $hasVariantDiscount = $regularAmount > $finalAmount;
+@endphp
+
 <p class="price-label text-sm text-zinc-500 max-sm:text-xs">
     @lang('shop::app.products.prices.configurable.as-low-as')
 </p>
 
-@if ($prices['final']['price'] < $prices['regular']['price'])
+@if ($hasVariantDiscount)
     <p
         class="regular-price text-lg text-gray-500 line-through max-sm:leading-4"
         aria-label="{{ $prices['regular']['formatted_price'] }}"

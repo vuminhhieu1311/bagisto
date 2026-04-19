@@ -372,7 +372,11 @@
                                 return;
                             }
 
-                            if (parseInt(configVariant.regular.price) > parseInt(configVariant.final.price)) {
+                            let regAmount = Number(configVariant.regular.price);
+
+                            let finAmount = Number(configVariant.final.price);
+
+                            if (regAmount > finAmount) {
                                 if (regularPrice) {
                                     regularPrice.style.display = 'block';
 
@@ -385,6 +389,8 @@
 
                                 if (regularPrice) {
                                     regularPrice.style.display = 'none';
+
+                                    regularPrice.innerHTML = '';
                                 }
                             }
 
@@ -392,6 +398,12 @@
                         } else {
                             if (priceLabel) {
                                 priceLabel.style.display = 'inline-block';
+                            }
+
+                            if (regularPrice) {
+                                regularPrice.style.display = 'none';
+
+                                regularPrice.innerHTML = '';
                             }
 
                             finalPrice.innerHTML = this.config.regular.formatted_price;
