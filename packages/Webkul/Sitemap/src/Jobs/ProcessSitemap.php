@@ -146,6 +146,8 @@ class ProcessSitemap implements ShouldQueue
 
         $sitemap->writeToDisk('public', $sitemapFilePath);
 
+        Storage::disk('public')->setVisibility($sitemapFilePath, 'public');
+
         $this->generatedSitemaps[] = $sitemapFilePath;
 
         $this->itemsToBeProcessed = [];
@@ -163,5 +165,7 @@ class ProcessSitemap implements ShouldQueue
         }
 
         $sitemap->writeToDisk('public', $this->sitemap->index_file_name);
+
+        Storage::disk('public')->setVisibility($this->sitemap->index_file_name, 'public');
     }
 }
