@@ -13,6 +13,7 @@ use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\SitemapIndex;
 use Spatie\Sitemap\Tags\Url;
 use Webkul\Sitemap\Contracts\Sitemap as SitemapContract;
+use Webkul\Sitemap\Models\BlogPost;
 use Webkul\Sitemap\Models\Category;
 use Webkul\Sitemap\Models\Page;
 use Webkul\Sitemap\Models\Product;
@@ -79,6 +80,13 @@ class ProcessSitemap implements ShouldQueue
          * Process the CMS pages.
          */
         Page::query()->chunk(100, fn ($items) => $this->processItems($items));
+
+        /**
+         * Process the blog listing page and blog posts.
+         */
+        $this->processItems([Url::create(url('blog'))]);
+
+        BlogPost::query()->chunk(100, fn ($items) => $this->processItems($items));
 
         /**
          * If there are any items left to be processed then generate the sitemap.
