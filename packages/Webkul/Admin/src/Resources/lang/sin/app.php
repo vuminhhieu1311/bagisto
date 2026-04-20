@@ -3490,7 +3490,7 @@ return [
                 'general'                       => 'සාමාන්‍ය',
                 'html'                          => 'HTML',
                 'image'                         => 'පින්තූරය',
-                'image-size'                    => 'රූපයේ ප්‍රනාන්දු මානාව (1920px X 700px) විය යුතුය',
+                'image-size'                    => 'රූපයේ ප්‍රනාන්දු මානාව (1820px X 900px) විය යුතුය',
                 'image-title'                   => 'පින්තූර සිටුවක්',
                 'image-upload-message'          => 'පින්තූර පමණක් (.jpeg, .jpg, .png, .webp, ..) සඳහා ඉඩ දෙනු ලැබේ.',
                 'inactive'                      => 'අක්‍රියාකාරී',

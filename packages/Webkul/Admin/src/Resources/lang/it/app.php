@@ -3490,7 +3490,7 @@ return [
                 'general'                       => 'Generale',
                 'html'                          => 'HTML',
                 'image'                         => 'Immagine',
-                'image-size'                    => 'La risoluzione dell\'immagine dovrebbe essere (1920px X 700px)',
+                'image-size'                    => 'La risoluzione dell\'immagine dovrebbe essere (1820px X 900px)',
                 'image-title'                   => 'Titolo Immagine',
                 'image-upload-message'          => 'Sono consentite solo immagini (.jpeg, .jpg, .png, .webp, ..).',
                 'inactive'                      => 'Inattivo',

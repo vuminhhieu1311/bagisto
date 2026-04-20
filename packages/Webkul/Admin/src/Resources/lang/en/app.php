@@ -3504,7 +3504,7 @@ return [
                 'general'                       => 'Chung',
                 'html'                          => 'HTML',
                 'image'                         => 'Hình ảnh',
-                'image-size'                    => 'Độ phân giải hình ảnh nên là (1920px X 700px)',
+                'image-size'                    => 'Độ phân giải hình ảnh nên là (1820px X 900px)',
                 'image-title'                   => 'Tiêu đề hình ảnh',
                 'image-upload-message'          => 'Chỉ cho phép các tệp hình ảnh (.jpeg, .jpg, .png, .webp, ..).',
                 'inactive'                      => 'Không hoạt động',

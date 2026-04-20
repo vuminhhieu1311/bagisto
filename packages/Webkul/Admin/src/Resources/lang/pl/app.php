@@ -3490,7 +3490,7 @@ return [
                 'general'                       => 'Ogólne',
                 'html'                          => 'HTML',
                 'image'                         => 'Obraz',
-                'image-size'                    => 'Rozmiar obrazu powinien wynosić (1920px X 700px)',
+                'image-size'                    => 'Rozmiar obrazu powinien wynosić (1820px X 900px)',
                 'image-title'                   => 'Tytuł obrazu',
                 'image-upload-message'          => 'Dozwolone są tylko obrazy (.jpeg, .jpg, .png, .webp, ..).',
                 'inactive'                      => 'Nieaktywny',

@@ -3491,7 +3491,7 @@ return [
                 'inactive'                      => '非活动',
                 'html'                          => 'HTML',
                 'image'                         => '图片',
-                'image-size'                    => '图片分辨率应为（1920px x 700px）',
+                'image-size'                    => '图片分辨率应为（1820px X 900px）',
                 'image-title'                   => '图片标题',
                 'image-upload-message'          => '仅允许图片（.jpeg、.jpg、.png、.webp 等）。',
                 'key'                           => '键：:key',

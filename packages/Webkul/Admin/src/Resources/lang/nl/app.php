@@ -3491,7 +3491,7 @@ return [
                 'general'                       => 'Algemeen',
                 'html'                          => 'HTML',
                 'image'                         => 'Afbeelding',
-                'image-size'                    => 'Afbeeldingsresolutie moet zijn (1920px X 700px)',
+                'image-size'                    => 'Afbeeldingsresolutie moet zijn (1820px X 900px)',
                 'image-title'                   => 'Afbeeldingstitel',
                 'image-upload-message'          => 'Alleen afbeeldingen (.jpeg, .jpg, .png, .webp, ..) zijn toegestaan.',
                 'inactive'                      => 'Inactief',

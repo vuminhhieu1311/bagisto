@@ -3490,7 +3490,7 @@ return [
                 'general'                       => 'General',
                 'html'                          => 'HTML',
                 'image'                         => 'Imatge',
-                'image-size'                    => 'La mida de la imatge ha de ser (1920px x 700px)',
+                'image-size'                    => 'La mida de la imatge ha de ser (1820px X 900px)',
                 'image-title'                   => 'Títol de la imatge',
                 'image-upload-message'          => 'Només s\'admeten imatges (.jpeg, .jpg, .png, .webp, ..).',
                 'inactive'                      => 'Inactiu',

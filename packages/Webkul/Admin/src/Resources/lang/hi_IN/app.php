@@ -3490,7 +3490,7 @@ return [
                 'general'                       => 'सामान्य',
                 'html'                          => 'एचटीएमएल',
                 'image'                         => 'छवि',
-                'image-size'                    => 'छवि संकल्प (1920px X 700px) होना चाहिए',
+                'image-size'                    => 'छवि संकल्प (1820px X 900px) होना चाहिए',
                 'image-title'                   => 'चित्र शीर्षक',
                 'image-upload-message'          => 'केवल छवियाँ (.jpeg, .jpg, .png, .webp, ..) की अनुमति हैं।',
                 'inactive'                      => 'निष्क्रिय',

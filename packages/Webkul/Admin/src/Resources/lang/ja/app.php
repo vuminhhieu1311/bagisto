@@ -3490,7 +3490,7 @@ return [
                 'general'                       => '一般',
                 'html'                          => 'HTML',
                 'image'                         => '画像',
-                'image-size'                    => '画像の解像度は（1920px X 700px）である必要があります',
+                'image-size'                    => '画像の解像度は（1820px X 900px）である必要があります',
                 'image-title'                   => '画像のタイトル',
                 'image-upload-message'          => '画像のみ（.jpeg、.jpg、.png、.webp、..）が許可されています。',
                 'inactive'                      => '非アクティブ',

@@ -3490,7 +3490,7 @@ return [
                 'general'                       => 'সাধারণ',
                 'html'                          => 'এইচটিএমএল',
                 'image'                         => 'চিত্র',
-                'image-size'                    => 'চিত্রের রেজোলিউশন হতে হবে (1920px X 700px)',
+                'image-size'                    => 'চিত্রের রেজোলিউশন হতে হবে (1820px X 900px)',
                 'image-title'                   => 'চিত্র শিরোনাম',
                 'image-upload-message'          => 'শুধুমাত্র চিত্র (.jpeg, .jpg, .png, .webp, ..) অনুমোদিত।',
                 'inactive'                      => 'নিষ্ক্রিয়',
